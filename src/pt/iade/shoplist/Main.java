@@ -1,4 +1,4 @@
-package application;
+package pt.iade.shoplist;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
