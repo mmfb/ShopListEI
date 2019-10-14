@@ -32,7 +32,6 @@ public final class ShopListDAO {
 		shopLists.add(new ShopList("Compras de Novembro",items));
 		items.add(new Item(4.0,new Product("Batatas",0.9)));
 		items.add(new Item(4.0,new Product("Cebolas",0.56)));
-			
 	}
 }
 

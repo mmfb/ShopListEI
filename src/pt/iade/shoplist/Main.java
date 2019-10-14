@@ -3,6 +3,7 @@ package pt.iade.shoplist;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import pt.iade.shoplist.controllers.MainController;
 import pt.iade.shoplist.controllers.ShopListController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,8 +15,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(
-					Main.class.getResource("views/shopListView.fxml"));
-			loader.setController(new ShopListController());;
+					Main.class.getResource("views/mainView.fxml"));
+			loader.setController(new MainController());;
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
