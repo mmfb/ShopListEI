@@ -14,6 +14,9 @@ public final class ShopListDAO {
 	private static ObservableList<ShopList> shopLists =
 			FXCollections.observableArrayList();
 
+	public static ObservableList<ShopList> getAllShopLists() {
+		return shopLists;
+	}
 	
 	// A static block is called the first time the class
 	// is used 
