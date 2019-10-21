@@ -28,16 +28,27 @@ public class WindowManager {
 	}
 
 	public static void openShopListWindow(ShopList shopList) {
-		Stage stage = new Stage();
-		openModalWindow("views/shopListView.fxml",stage,
+		/*		
+  Stage stage = new Stage();
+   openModalWindow("views/shopListView.fxml",stage,
 				primaryStage,new ShopListController(shopList));
-		 
-		System.out.println("INICIO");
-		stage.showAndWait();
-		System.out.println("FIM");
+		 */
+		openSceneInWindow("views/shopListView.fxml",
+				primaryStage,new ShopListController(shopList));
+	//	stage.showAndWait();
 	}
 
 	
+	public static void openSceneInWindow(String viewPath, Stage window,
+			Object controller) {
+		try {
+			Parent root = createNewNodeTree(viewPath, controller);
+			window.getScene().setRoot(root);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void openModalWindow(String viewPath, Stage window,
 			Stage parentWindow, Object controller) {
 		window.initOwner(parentWindow);
@@ -50,10 +61,7 @@ public class WindowManager {
 	public static void openWindow(String viewPath, Stage window, 
 			Object controller) {
 		try {
-			FXMLLoader loader = new FXMLLoader(
-					Main.class.getResource(viewPath));
-			loader.setController(controller);;
-			Parent root = loader.load();
+			Parent root = createNewNodeTree(viewPath, controller);
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
 			window.setScene(scene);
@@ -63,6 +71,13 @@ public class WindowManager {
 		
 	}
 
+	private static Parent createNewNodeTree(String viewPath, Object controller) throws IOException {
+		FXMLLoader loader = new FXMLLoader(
+				Main.class.getResource(viewPath));
+		loader.setController(controller);;
+		Parent root = loader.load();
+		return root;
+	}
 	
 	
 }
