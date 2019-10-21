@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import pt.iade.shoplist.WindowManager;
 import pt.iade.shoplist.models.ImportedProduct;
 import pt.iade.shoplist.models.Item;
 import pt.iade.shoplist.models.Product;
@@ -28,5 +29,10 @@ public class ShopListController {
     private void initialize() {
     	itemsLV.setItems(shopList.getItems());
     	nameL.setText(shopList.getName());
+    }
+    
+    @FXML
+    private void backToMain() {
+    	WindowManager.backToMainWindow();
     }
 }

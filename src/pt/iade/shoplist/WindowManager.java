@@ -19,6 +19,11 @@ public class WindowManager {
 		WindowManager.primaryStage = primaryStage;
 	}
 
+
+	public static void backToMainWindow() {
+		openSceneInWindow("views/mainView.fxml",
+				primaryStage,new MainController());
+	}
 	
 	
 	public static void openMainWindow() {
@@ -28,14 +33,8 @@ public class WindowManager {
 	}
 
 	public static void openShopListWindow(ShopList shopList) {
-		/*		
-  Stage stage = new Stage();
-   openModalWindow("views/shopListView.fxml",stage,
-				primaryStage,new ShopListController(shopList));
-		 */
 		openSceneInWindow("views/shopListView.fxml",
 				primaryStage,new ShopListController(shopList));
-	//	stage.showAndWait();
 	}
 
 	
