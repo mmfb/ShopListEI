@@ -70,7 +70,7 @@ public class WindowManager {
 		
 	}
 
-	private static Parent createNewNodeTree(String viewPath, Object controller) throws IOException {
+	public static Parent createNewNodeTree(String viewPath, Object controller) throws IOException {
 		FXMLLoader loader = new FXMLLoader(
 				Main.class.getResource(viewPath));
 		loader.setController(controller);;
