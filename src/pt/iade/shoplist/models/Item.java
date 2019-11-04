@@ -1,6 +1,9 @@
 package pt.iade.shoplist.models;
 
-public class Item {
+import javafx.scene.image.Image;
+import pt.iade.shoplist.views.itemListView.ImageItemizable;
+
+public class Item implements ImageItemizable {
 	private double quantity;
 	private Product product;
 	public Item(double quantity, Product product) {
@@ -24,6 +27,22 @@ public class Item {
 				quantity+" x "+
 				product.getPrice()+" €) "+
 				getCost() + " €";
+	}
+	@Override
+	public String getName() {
+		return toString();
+	}
+	@Override
+	public Image getImage() {
+		return null;
+	}
+	@Override
+	public String[] getDescription() {
+		String [] desc = new String[3];
+		desc[0]=product.getName() ;
+		desc[1]=quantity+" x "+	product.getPrice()+" €";
+		desc[2]= "Total: "+	getCost() + " €";
+		return desc; 
 	}
 	
 }

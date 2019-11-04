@@ -14,11 +14,12 @@ import pt.iade.shoplist.Main;
 import pt.iade.shoplist.WindowManager;
 import pt.iade.shoplist.models.ShopList;
 import pt.iade.shoplist.models.daos.ShopListDAO;
+import pt.iade.shoplist.views.itemListView.ItemListView;
 
 public class MainController {
 
 	@FXML
-	private ListView<ShopList> shoplistLV;
+	private ItemListView<ShopList> shoplistLV;
 
 
 	@FXML

@@ -14,10 +14,11 @@ import pt.iade.shoplist.models.ImportedProduct;
 import pt.iade.shoplist.models.Item;
 import pt.iade.shoplist.models.Product;
 import pt.iade.shoplist.models.ShopList;
+import pt.iade.shoplist.views.itemListView.ItemListView;
 
 public class ShopListController {
     @FXML
-    private ListView<Item> itemsLV;
+    private ItemListView<Item> itemsLV;
 
     @FXML
     private Label nameL;
@@ -33,7 +34,9 @@ public class ShopListController {
     private void initialize() {
     	itemsLV.setItems(shopList.getItems());
     	// this determines what is the layout of each cell
-    	itemsLV.setCellFactory((listView) -> {
+    	/*
+    	  itemsLV.setCellFactory((listView) -> {
+    	 
     	 return new ListCell<Item>() {
     		  public void updateItem(Item item, boolean empty) {
     			if (item == null || empty) {
@@ -56,7 +59,7 @@ public class ShopListController {
     		  } 
     	 };
     	});
-    	
+    	*/
     	nameL.setText(shopList.getName());
  
     }
