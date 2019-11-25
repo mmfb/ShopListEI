@@ -14,6 +14,7 @@ import pt.iade.shoplist.models.ImportedProduct;
 import pt.iade.shoplist.models.Item;
 import pt.iade.shoplist.models.Product;
 import pt.iade.shoplist.models.ShopList;
+import pt.iade.shoplist.models.daos.ShopListDAO;
 import pt.iade.shoplist.views.itemListView.ItemListView;
 
 public class ShopListController {
@@ -32,7 +33,8 @@ public class ShopListController {
     
     @FXML
     private void initialize() {
-    	itemsLV.setItems(shopList.getItems());
+    	itemsLV.setItems(
+    			ShopListDAO.getShopListItems(shopList.getId()));
     	// this determines what is the layout of each cell
     	/*
     	  itemsLV.setCellFactory((listView) -> {

@@ -5,20 +5,17 @@ import javafx.scene.image.Image;
 import pt.iade.shoplist.views.itemListView.ImageItemizable;
 
 public class ShopList implements ImageItemizable {
+	private int id;
 	private String name;
 	private ShoplistState state;
-	private ObservableList<Item> items;
-	public ShopList(String name, ObservableList<Item> items) {
+	public ShopList(int id,String name) {
+		this.id = id;
 		this.name = name;
-		this.items = items;
 		this.state = ShoplistState.REQUEST;
 	}
 	@Override
 	public String getName() {
 		return name;
-	}
-	public ObservableList<Item> getItems() {
-		return items;
 	}
 	@Override
 	public String toString() {
@@ -32,6 +29,9 @@ public class ShopList implements ImageItemizable {
 	@Override
 	public Image getImage() {
 		return null;
+	}
+	public int getId() {
+		return id;
 	}
 	
 	

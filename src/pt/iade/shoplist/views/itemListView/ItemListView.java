@@ -12,7 +12,8 @@ extends ListView<T> {
 	public ItemListView() {
 		setCellFactory((listView) -> {
 			return new ListCell<T>() {
-				public void updateItem(ImageItemizable item, boolean empty) {
+				public void updateItem(T item, boolean empty) {
+					super.updateItem(item, empty);
 					if (item == null || empty) {
 						// nullify all content if no item exists
 						setText(null);
@@ -34,4 +35,6 @@ extends ListView<T> {
 			};
 		});
 	}
+
+	
 }
